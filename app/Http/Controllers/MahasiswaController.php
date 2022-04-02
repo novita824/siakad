@@ -62,6 +62,7 @@ class MahasiswaController extends Controller
     'Nama' => 'required',
     'Kelas' => 'required',
     'Jurusan' => 'required',
+    'No_Handphone' => 'required',
     'TanggalLahir' => 'required',
     'Email' => 'required',
  ]);

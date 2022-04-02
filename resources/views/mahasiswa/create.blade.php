@@ -34,9 +34,21 @@
         <label for="Kelas">Kelas</label>
         <input type="Kelas" name="Kelas" class="form-control" id="Kelas" ariadescribedby="password" >
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <label for="Jurusan">Jurusan</label>
         <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" ariadescribedby="Jurusan" >
+    </div>
+    <div class="form-group">
+        <label for="No_Handphone">No_Handphone</label>
+        <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" ariadescribedby="No_Handphone" >
+    </div>
+    <div class="form-group">
+        <label for="TanggalLahir">Tanggal Lahir</label>
+        <input type="TanggalLahir" name="TanggalLahir" class="form-control" id="TanggalLahir" ariadescribedby="TanggalLahir" >
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="Email" name="Email" class="form-control" id="Email" ariadescribedby="Email" >
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
