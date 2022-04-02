@@ -12,6 +12,12 @@
         </div>
     </div>
 
+    <p>Cari Data Mahasiswa :</p>
+    <form action="/mahasiswa/cari" method="GET">
+        <input type="text" name="cari" placeholder="Cari Mahasiswa .." value="{{ old('cari')}}">
+        <input type="submit" value="CARI">
+    </form>
+
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
         <p>{{ $message }}</p>

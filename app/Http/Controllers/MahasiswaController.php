@@ -79,4 +79,17 @@ class MahasiswaController extends Controller
     return redirect()->route('mahasiswa.index')
     -> with('success', 'Mahasiswa Berhasil Dihapus');
  }
+ public function cari(Request $request)
+ {
+    // menangkap data pencarian
+    $cari = $request->cari;
+
+    // mengambil data dari mahasiswa sesuai pencarian data
+    $mahasiswa = DB::table('mahasiswa')
+    ->where('nama','like',"%".$cari."%")
+    ->paginate();
+
+    // mengirim data mahasiswa ke view index
+    return view('index',['mahasiswa' => $mahasiswa]);
+ }
 };

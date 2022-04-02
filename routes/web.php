@@ -20,3 +20,5 @@ Route::resource('mahasiswa', MahasiswaController::class);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('/mahasiswa/cari', 'MahasiswaController@cari');
