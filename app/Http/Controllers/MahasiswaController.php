@@ -43,6 +43,13 @@ class MahasiswaController extends Controller
     return redirect()->route('mahasiswa.index')
     ->with('success', 'Mahasiswa Berhasil Ditambahkan');
  }
+ 
+ public function cari(Request $request)
+ {
+   $search = Mahasiswa::where('Nim','like',"%".$request->search."%")->paginate(5);
+   return view('mahasiswa.index',['Mahasisw'=>$search]);
+ }
+
  public function show($Nim)
  {
     //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa

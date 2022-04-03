@@ -18,6 +18,15 @@
     </div>
     @endif
    
+    <form action="search" method="GET">
+        <div class="input-group custom-search-form">
+            <input type="search" name="search" class="form control w-75 d-inline" placeholder="search...">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </span>
+        </div>
+    </form>
+
     <table class="table table-bordered">
         <tr>
             <th>Nim</th>
