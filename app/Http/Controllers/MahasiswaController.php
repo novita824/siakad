@@ -22,7 +22,8 @@ class MahasiswaController extends Controller
  }
  public function create()
  {
-    return view('mahasiswa.create');
+    $kelas = Kelas::all(); //mendapatkan data dari tabel kelas
+    return view('mahasiswa.create',['kelas' => $kelas]);
  }
  public function store(Request $request)
  {
