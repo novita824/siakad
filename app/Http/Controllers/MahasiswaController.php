@@ -42,7 +42,7 @@ class MahasiswaController extends Controller
  $mahasiswa->save();
 
  $kelas = new Kelas;
- $kelas->id = $request->get('Kelas');
+ $kelas->dd = $request->get('Kelas');
 
     //fungsi eloquent untuk menambah data dengan relasi belongsTo
     $mahasiswa->kelas()->associate($kelas);
