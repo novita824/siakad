@@ -41,7 +41,7 @@ class MahasiswaController extends Controller
  $mahasiswa->jurusan = $request->get('Jurusan');
  $mahasiswa->save();
 
- $kelas = new Kelas();
+ $kelas = new Kelas;
  $kelas->id = $request->get('Kelas');
 
     //fungsi eloquent untuk menambah data dengan relasi belongsTo
