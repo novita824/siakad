@@ -78,9 +78,6 @@ class MahasiswaController extends Controller
     'Nama' => 'required',
     'Kelas' => 'required',
     'Jurusan' => 'required',
-    'No_Handphone' => 'required',
-    'TanggalLahir' => 'required',
-    'Email' => 'required',
  ]);
     //fungsi eloquent untuk mengupdate data inputan kita
     Mahasiswa::find($Nim)->update($request->all());
