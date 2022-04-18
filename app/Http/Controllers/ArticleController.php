@@ -24,7 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        return vie('articles.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         if ($request->file('image')) {
-            $image_name = $request->file('image')->store('images','public');
+            $image_name = $request->file('image')->store('images', 'public');
         }
 
         Article::create([

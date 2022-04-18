@@ -22,4 +22,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('article', ArticleController::class);
+Route::resource('articles', ArticleController::class);
