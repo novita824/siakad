@@ -22,9 +22,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return vie('articles.create');
+        return view('articles.create');
     }
 
     /**
@@ -64,9 +64,11 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Article $id)
     {
-        //
+        $article = Article::find($id);
+
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
@@ -76,9 +78,20 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Article $id)
     {
-        //
+        $article = Article::find($id);
+
+        $article->title = $request->title;
+        $article->content = $request->content;
+
+        if ($article->feature_image && file_exists(storage_path('app/public' . $article->featured_image))) {
+            \Storage::delete('public/' . $article->featured_image);
+        }
+        $image_name = $request->file('image')->store('image', 'public');
+
+        $article->save();
+        return 'Artikel berhasil diubah';
     }
 
     /**
@@ -90,5 +103,11 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+
+    public function cetak_pdf(){
+        $article = Article::all();
+        $pdf = PDF::loadview('articles.articles_pdf',['articles'=>$articles]);
+        return $pdf->stream();
     }
 }
