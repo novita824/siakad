@@ -20,6 +20,7 @@
                     <th>Judul</th>
                     <th>Isi</th>
                     <th>Gambar</th>
+                    <th>Cetak ke PDF</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                     <td>{{$a->title}}</td>
                     <td>{{$a->content}}</td>
                     <td>{{$a->featured_image}}</td>
+                    <td>{{$a->button}}</td>
                 </tr>
                 @endforeach
             </tbody>

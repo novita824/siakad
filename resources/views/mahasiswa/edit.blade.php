@@ -32,6 +32,10 @@
         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $Mahasiswa->nama }}" aria-describedby="Nama" >
     </div>
     <div class="form-group">
+        <label for="Foto">Foto</label>
+        <input type="image" name="Foto" class="form-control" id="Foto" value="{{ $Mahasiswa->foto }}" aria-describedby="Nama" >
+    </div>
+    <div class="form-group">
         <label for="Kelas">Kelas</label>
         <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" aria-describedby="Kelas" >
     </div>
